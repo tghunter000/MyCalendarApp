@@ -25,22 +25,6 @@
         android:paddingStart="16dp"
         android:paddingBottom="12dp"/>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:id="@+id/dayButtonContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="12dp" />
-
-    </HorizontalScrollView>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,7 +36,75 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Card 1: Day Title + Goal -->
+            <!-- Calendar Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <Button
+                        android:id="@+id/btnPrevMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="◀"
+                        android:textColor="#FF6B35"
+                        android:textSize="18sp"
+                        android:background="@android:color/transparent"/>
+
+                    <TextView
+                        android:id="@+id/txtMonthYear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/btnNextMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▶"
+                        android:textColor="#FF6B35"
+                        android:textSize="18sp"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/calendarGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+            <!-- Quick day pills -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:id="@+id/dayButtonContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+            <!-- Day Title + Goal -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +130,7 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Card 2: Exercises -->
+            <!-- Exercises -->
             <LinearLayout
                 android:id="@+id/exerciseContainer"
                 android:layout_width="match_parent"
@@ -88,7 +140,7 @@
                 android:padding="16dp"
                 android:layout_marginBottom="14dp" />
 
-            <!-- Card 3: Motivational Quote -->
+            <!-- Motivational Quote -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +151,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="🔥 TODAY'S MOTIVATION"
+                    android:text="TODAY'S MOTIVATION"
                     android:textColor="#FF6B35"
                     android:textSize="12sp"
                     android:textStyle="bold"/>
@@ -117,7 +169,7 @@
                     android:id="@+id/btnNewQuote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Quote 🔄"
+                    android:text="New Quote"
                     android:textColor="#FFFFFF"
                     android:background="@drawable/day_btn_selected_bg"
                     android:layout_marginTop="10dp"
